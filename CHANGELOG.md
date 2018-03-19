@@ -10,3 +10,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Metric wording is being reviewed for the next patch.
 
 ## [1.0.0] - 2026-05-05
+
+### Added
+
+- Stable contract: exit codes 0, 1 and 2, and the written input contract in
+  `docs/FORMAT.md`.

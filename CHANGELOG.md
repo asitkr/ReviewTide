@@ -15,3 +15,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Stable contract: exit codes 0, 1 and 2, and the written input contract in
   `docs/FORMAT.md`.
+- Percentile reporting with the sample size next to every number.
+
+## [0.9.0] - 2026-01-20
+
+### Added

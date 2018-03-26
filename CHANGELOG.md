@@ -20,3 +20,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [0.9.0] - 2026-01-20
 
 ### Added
+
+- Ownership concentration and the bus factor signal per path prefix.
+- A worked run over the bundled PR export.
+
+## [0.8.0] - 2025-04-08

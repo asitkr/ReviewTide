@@ -25,3 +25,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - A worked run over the bundled PR export.
 
 ## [0.8.0] - 2025-04-08
+
+### Added
+
+- Review depth: comment counts and review rounds per pull request.

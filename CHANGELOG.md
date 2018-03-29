@@ -29,3 +29,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - Review depth: comment counts and review rounds per pull request.
+- `--since` window for git log input.
+
+## [0.7.0] - 2024-07-02
+
+### Added

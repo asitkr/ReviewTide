@@ -34,3 +34,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [0.7.0] - 2024-07-02
 
 ### Added
+
+- JSON report with fixed keys, including per-percentile sample sizes.
+- `flow` and `ownership` subcommands.
+
+## [0.6.0] - 2023-11-21

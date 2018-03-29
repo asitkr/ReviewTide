@@ -39,3 +39,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `flow` and `ownership` subcommands.
 
 ## [0.6.0] - 2023-11-21
+
+### Added
+
+- Queue time before first review and first response latency as separate
+  metrics, because they answer different questions.

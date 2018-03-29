@@ -44,3 +44,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Queue time before first review and first response latency as separate
   metrics, because they answer different questions.
+- Strict validation for timestamps and review states.
+
+## [0.5.0] - 2022-10-11
+

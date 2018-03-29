@@ -48,3 +48,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [0.5.0] - 2022-10-11
 
+### Added
+
+- PR export parser with one record per pull request.
+- The metric this tool refuses to compute: a single averaged review time.
+

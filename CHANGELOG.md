@@ -53,3 +53,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - PR export parser with one record per pull request.
 - The metric this tool refuses to compute: a single averaged review time.
 
+## [0.4.0] - 2021-10-26
+
+### Added
+
+- Git log numstat parser for ownership attribution.

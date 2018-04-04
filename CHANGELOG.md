@@ -58,3 +58,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - Git log numstat parser for ownership attribution.
+- Per-path ownership shares in the report.
+
+## [0.3.0] - 2020-12-08
+
+### Added

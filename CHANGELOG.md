@@ -63,3 +63,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [0.3.0] - 2020-12-08
 
 ### Added
+
+- Percentile computation with explicit small-sample warnings.
+- `report` subcommand and the first output shape.
+

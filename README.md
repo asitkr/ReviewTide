@@ -45,3 +45,16 @@ ranking of individuals by output of any kind. That absence is the product.
 
 Ranking people by line count rewards churn and punishes the careful work that
 keeps a codebase alive: deleting dead code, reviewing thoroughly, pairing,
+mentoring, and writing the small change that took a day of thought. A dashboard
+that scores those at zero will, over time, produce a team that stops doing
+them. reviewtide is built to measure the health of the review process itself,
+so the one number it withholds is the one that would corrupt the behaviour it
+wants to observe.
+
+The single place reviewtide does count activity per author is the bus-factor
+signal, and even there the unit is inverted. The question is not "who did the
+most" but "how few people would we have to lose before this directory has
+nobody who has recently touched it". That is a risk measure for the team, not a
+scoreboard. Leading with the refusal matters because every later section
+(percentiles over means, touches over line counts, offline exports over a live
+API) is a consequence of the same stance.

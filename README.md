@@ -58,3 +58,15 @@ nobody who has recently touched it". That is a risk measure for the team, not a
 scoreboard. Leading with the refusal matters because every later section
 (percentiles over means, touches over line counts, offline exports over a live
 API) is a consequence of the same stance.
+
+## Install
+
+reviewtide targets Python 3.11 or newer. Install it as an editable package,
+which registers a `reviewtide` console command:
+
+```
+pip install -e .
+```
+
+You can also run it without installing by pointing Python at `src`:
+

@@ -108,3 +108,15 @@ reviewtide treats the open time as the start of the wait.
 
 ### First response latency
 
+The same underlying measurement as queue time, reported under its own label so
+the two concepts stay legible: hours from open to first review. It is kept
+separate because teams reason about "queue time" (a property of the backlog)
+and "first response" (a property of reviewers) differently, even when the
+export cannot yet separate them.
+
+What it cannot tell you: it says nothing about the quality of that first
+response. A one-word "LGTM" and a detailed critique count the same here.
+
+### Review depth
+
+Two numbers per reviewed PR: the number of review rounds (one review event is

@@ -120,3 +120,16 @@ response. A one-word "LGTM" and a detailed critique count the same here.
 ### Review depth
 
 Two numbers per reviewed PR: the number of review rounds (one review event is
+one round) and the total comments summed across those rounds. Reported as
+percentiles over the reviewed PRs.
+
+What it cannot tell you: comment count is not comment weight. A PR with ten
+nitpick comments looks deeper than one with a single comment that caught a real
+defect. Depth is a proxy for engagement, not rigour.
+
+### Ownership concentration
+
+For each top-level directory, the number of distinct authors who touched it,
+the total touches, the share held by the most active author, and the bus
+factor: the smallest set of authors whose combined share of touches exceeds 50
+percent. A "touch" is one commit that changed at least one file in the

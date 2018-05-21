@@ -95,3 +95,16 @@ reviewtide version
 Four measures, each defined precisely, each with what it cannot tell you. The
 definitions live in `src/reviewtide/flow.py` and `src/reviewtide/ownership.py`.
 
+### Queue time before first review
+
+The number of hours between a pull request opening (`opened_at`) and the
+timestamp of its first review event, summarised across all reviewed PRs. It
+answers "how long does a change wait before anyone engages with it".
+
+What it cannot tell you: in this export, queue time and first response latency
+are the same measurement, because the export carries no separate "ready for
+review" moment. If your process distinguishes "opened" from "marked ready",
+reviewtide treats the open time as the start of the wait.
+
+### First response latency
+

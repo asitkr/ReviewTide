@@ -83,3 +83,15 @@ reviewtide report    --pr <pr_export.jsonl> --gitlog <gitlog.numstat>
 reviewtide version
 ```
 
+| Command     | Reads                    | Reports                                        |
+| ----------- | ------------------------ | ---------------------------------------------- |
+| `flow`      | PR export                | queue time, first response latency, depth      |
+| `ownership` | git numstat export       | per-directory concentration and bus factor     |
+| `report`    | both exports             | flow then ownership in one pass                |
+| `version`   | nothing                  | the package version                            |
+
+## What it measures
+
+Four measures, each defined precisely, each with what it cannot tell you. The
+definitions live in `src/reviewtide/flow.py` and `src/reviewtide/ownership.py`.
+

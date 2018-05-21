@@ -70,3 +70,16 @@ pip install -e .
 
 You can also run it without installing by pointing Python at `src`:
 
+```
+PYTHONPATH=src python -m reviewtide version
+```
+
+## Commands
+
+```
+reviewtide flow      --pr <pr_export.jsonl>
+reviewtide ownership --gitlog <gitlog.numstat>
+reviewtide report    --pr <pr_export.jsonl> --gitlog <gitlog.numstat>
+reviewtide version
+```
+

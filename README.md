@@ -146,3 +146,15 @@ Every statistic prints the sample size it was computed from, written as `n=`
 next to the label, so a small sample cannot masquerade as a trend. The strip at
 the top of this README prints `n=18` for exactly that reason.
 
+Latency is summarised with percentiles, never a mean. A mean hides the shape of
+a skewed distribution and lets one very slow review, or one instant merge, drag
+the headline away from the typical experience. Percentiles preserve both: the
+p50 shows the typical case, the p90 shows the tail. The method is linear
+interpolation between closest ranks, in `percentile()` in `flow.py`, so results
+are reproducible without a third-party library.
+
+Below a sample of five, reviewtide withholds the percentiles entirely. Instead
+of reporting a p90 built from two data points, which would carry the authority
+of a statistic and the reliability of a coin flip, it prints the raw values and
+an explicit message that the sample is too small. The threshold is
+`MIN_SAMPLE_FOR_PERCENTILE = 5` in `flow.py`, and the small-sample branch reads:

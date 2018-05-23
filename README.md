@@ -171,3 +171,15 @@ manufacture a confident answer.
 Bus factor uses a simple majority rule: the smallest number of authors whose
 combined touches exceed half of a directory's total. A bus factor of 1 means a
 single author accounts for the majority of activity, so if that person becomes
+unavailable, nobody else has recently worked in that directory. Directories
+sort riskiest first (rising bus factor, then falling top share, then name), an
+ordering defined at the end of `compute_ownership()` in `ownership.py`.
+
+In the sample fixtures, two directories are owned by a single author. `infra`
+is touched only by Dana Kim across every commit that changes it, and `docs` is
+touched only by Carla Nunez. Both report `bus_factor=1` with `authors=1` and a
+100 percent top share. `infra` is the directory the sample was built to
+surface: the clearest single-owner risk in the export. The remaining
+directories (`cli`, `tests`, `src`) also report `bus_factor=1` because one
+author holds a majority even where two authors are present, which is exactly
+the concentration the majority rule is designed to catch.

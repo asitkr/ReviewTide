@@ -133,3 +133,16 @@ For each top-level directory, the number of distinct authors who touched it,
 the total touches, the share held by the most active author, and the bus
 factor: the smallest set of authors whose combined share of touches exceeds 50
 percent. A "touch" is one commit that changed at least one file in the
+directory, counted once regardless of how many files or lines it changed.
+
+What it cannot tell you: it does not weight by recency or by how critical a
+directory is. A directory of many trivial commits and one of a few large,
+careful commits can produce a similar bus factor. It reads only the git export;
+work done outside version control is invisible.
+
+## Percentiles and honest sample sizes
+
+Every statistic prints the sample size it was computed from, written as `n=`
+next to the label, so a small sample cannot masquerade as a trend. The strip at
+the top of this README prints `n=18` for exactly that reason.
+

@@ -158,3 +158,16 @@ of reporting a p90 built from two data points, which would carry the authority
 of a statistic and the reliability of a coin flip, it prints the raw values and
 an explicit message that the sample is too small. The threshold is
 `MIN_SAMPLE_FOR_PERCENTILE = 5` in `flow.py`, and the small-sample branch reads:
+
+```
+sample too small for percentiles (need n>=5); raw values in hours:
+```
+
+This is the honest failure mode: say "I do not have enough data" rather than
+manufacture a confident answer.
+
+## Ownership and the bus factor signal
+
+Bus factor uses a simple majority rule: the smallest number of authors whose
+combined touches exceed half of a directory's total. A bus factor of 1 means a
+single author accounts for the majority of activity, so if that person becomes

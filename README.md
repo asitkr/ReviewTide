@@ -183,3 +183,16 @@ surface: the clearest single-owner risk in the export. The remaining
 directories (`cli`, `tests`, `src`) also report `bus_factor=1` because one
 author holds a majority even where two authors are present, which is exactly
 the concentration the majority rule is designed to catch.
+
+## A worked run
+
+The block below was captured in this session by running the CLI against the
+fixtures in `samples/`. It is pasted verbatim.
+
+Command:
+
+```
+reviewtide report --pr samples/pr_export.jsonl --gitlog samples/gitlog.numstat
+```
+
+Output:

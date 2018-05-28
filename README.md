@@ -196,3 +196,15 @@ reviewtide report --pr samples/pr_export.jsonl --gitlog samples/gitlog.numstat
 ```
 
 Output:
+
+```
+== flow ==
+pull requests in export: 20
+never reviewed: 2
+
+queue_time_before_first_review_hours (n=18)
+  p50  3.8h
+  p75  17.5h
+  p90  49.2h
+  min  1.0h
+  max  67.0h

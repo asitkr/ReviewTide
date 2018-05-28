@@ -208,3 +208,16 @@ queue_time_before_first_review_hours (n=18)
   p90  49.2h
   min  1.0h
   max  67.0h
+
+review_depth (n=18)
+  p50  rounds 1.0  comments 4.0
+  p75  rounds 1.0  comments 5.0
+  p90  rounds 2.0  comments 7.3
+
+== ownership ==
+commits in export: 20
+directories: 5
+
+directory concentration (riskiest first)
+  docs: bus_factor=1 authors=1 touches=4 top=Carla Nunez (100%)
+  infra: bus_factor=1 authors=1 touches=6 top=Dana Kim (100%)

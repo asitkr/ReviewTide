@@ -246,3 +246,16 @@ to 6 hours has 10, 6 to 12 has 2, 12 to 24 has 3, 24 to 48 has 1, 48 to 72 has
 
 The first bin (0 to 6 hours) holds 10 of the 18 reviewed PRs, which is why the
 median sits at 3.8 hours. The rightmost bin (48 to 72 hours) is drawn in amber
+because it holds the p90 tail: the two reviews that took over two days are the
+ones worth asking about, so the colour points the eye there rather than at the
+tall first bar.
+
+## Input formats
+
+reviewtide reads two files. Neither is fetched: you export them yourself and
+pass the paths in.
+
+### The git numstat export
+
+Produce it with:
+

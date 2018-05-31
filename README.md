@@ -221,3 +221,15 @@ directories: 5
 directory concentration (riskiest first)
   docs: bus_factor=1 authors=1 touches=4 top=Carla Nunez (100%)
   infra: bus_factor=1 authors=1 touches=6 top=Dana Kim (100%)
+  cli: bus_factor=1 authors=2 touches=3 top=Ben Osei (67%)
+  tests: bus_factor=1 authors=2 touches=5 top=Ben Osei (60%)
+  src: bus_factor=1 authors=2 touches=7 top=Alice Rivera (57%)
+```
+
+Reading this run: 20 PRs in the export, 2 of which (ids 107 and 116 in the
+sample) were never reviewed, so the flow sample is `n=18` rather than 20.
+Median first response is under four hours, but the p90 of 49.2 hours and the
+max of 67.0 hours show a long tail. The ownership block flags `docs` and
+`infra` as single-owner directories, the finding that should trigger a
+conversation about spreading knowledge before those owners take leave.
+

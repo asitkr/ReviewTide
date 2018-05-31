@@ -233,3 +233,16 @@ max of 67.0 hours show a long tail. The ownership block flags `docs` and
 `infra` as single-owner directories, the finding that should trigger a
 conversation about spreading knowledge before those owners take leave.
 
+## Reading the latency asset
+
+The histogram below shows the shape behind the flow percentiles, drawn from the
+same run. Its embedded numbers match the output above: n=18, p50=3.8h,
+p90=49.2h, max=67.0h.
+
+![Histogram of hours from pull request opened to first review across 18
+reviewed pull requests. Median 3.8 hours, 90th percentile 49.2 hours. Bins: 0
+to 6 hours has 10, 6 to 12 has 2, 12 to 24 has 3, 24 to 48 has 1, 48 to 72 has
+2.](docs/assets/review-latency.svg)
+
+The first bin (0 to 6 hours) holds 10 of the 18 reviewed PRs, which is why the
+median sits at 3.8 hours. The rightmost bin (48 to 72 hours) is drawn in amber

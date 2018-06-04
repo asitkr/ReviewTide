@@ -271,3 +271,16 @@ Parsing lives in `src/reviewtide/gitlog.py`.
 | commit header | `commit`, hash, author name, ISO date     | literal token `commit` in field one     |
 | numstat row   | added, deleted, path                      | added/deleted are `-` for binary files  |
 
+Binary files report `-` for both counts, which reviewtide keeps as `None` so a
+binary change is distinguishable from a zero-line text change. A numstat row
+before any commit header is a parse error.
+
+### The JSON Lines PR export
+
+One JSON object per line, one object per pull request. Parsing lives in
+`src/reviewtide/prexport.py`.
+
+| Field         | Type                | Meaning                                            |
+| ------------- | ------------------- | -------------------------------------------------- |
+| `id`          | integer or string   | unique per pull request                            |
+| `author`      | string              | login of the person who opened it                  |

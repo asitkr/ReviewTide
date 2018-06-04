@@ -259,3 +259,15 @@ pass the paths in.
 
 Produce it with:
 
+```
+git log --numstat --date=iso-strict --pretty=format:'commit%x09%H%x09%an%x09%ad'
+```
+
+Each commit is a header line followed by one numstat row per changed file.
+Parsing lives in `src/reviewtide/gitlog.py`.
+
+| Line type     | Fields (tab separated)                    | Notes                                   |
+| ------------- | ----------------------------------------- | --------------------------------------- |
+| commit header | `commit`, hash, author name, ISO date     | literal token `commit` in field one     |
+| numstat row   | added, deleted, path                      | added/deleted are `-` for binary files  |
+

@@ -284,3 +284,15 @@ One JSON object per line, one object per pull request. Parsing lives in
 | ------------- | ------------------- | -------------------------------------------------- |
 | `id`          | integer or string   | unique per pull request                            |
 | `author`      | string              | login of the person who opened it                  |
+| `directories` | list of strings     | top-level directories the change touched           |
+| `opened_at`   | ISO 8601 string     | when the PR was opened                             |
+| `reviews`     | list of objects     | review events; may be empty (never reviewed)       |
+
+Each entry in `reviews` carries three fields:
+
+| Field          | Type            | Meaning                          |
+| -------------- | --------------- | -------------------------------- |
+| `reviewer`     | string          | login of the reviewer            |
+| `submitted_at` | ISO 8601 string | when the review was submitted    |
+| `comments`     | integer         | comment count in that review     |
+

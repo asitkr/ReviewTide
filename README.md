@@ -296,3 +296,16 @@ Each entry in `reviews` carries three fields:
 | `submitted_at` | ISO 8601 string | when the review was submitted    |
 | `comments`     | integer         | comment count in that review     |
 
+An empty `reviews` list is a real signal (the PR was never reviewed) and is
+preserved rather than dropped. Reviews are sorted chronologically on parse so
+first-response logic does not depend on export ordering. A missing required
+field or malformed JSON is a parse error that stops the run with exit code 2.
+
+See `samples/` for a worked pair of fixtures and `samples/README.md` for how
+they were constructed.
+
+## Output format
+
+Output is line-oriented and deterministic: fixed field order, no wall-clock
+time, no randomness, so two runs of the same input diff cleanly in git.
+| Line                                                | Meaning                                             |

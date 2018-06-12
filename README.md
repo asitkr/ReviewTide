@@ -309,3 +309,15 @@ they were constructed.
 Output is line-oriented and deterministic: fixed field order, no wall-clock
 time, no randomness, so two runs of the same input diff cleanly in git.
 | Line                                                | Meaning                                             |
+| --------------------------------------------------- | --------------------------------------------------- |
+| `pull requests in export: N`                        | count of PR objects parsed                          |
+| `never reviewed: N`                                 | PRs with an empty `reviews` list                    |
+| `<label> (n=N)`                                     | a statistic and the sample size it rests on         |
+| `  pXX  V.Vh`                                        | latency percentile in hours                         |
+| `  min` / `  max`                                   | extremes of the latency sample                      |
+| `  pXX  rounds R.R  comments C.C`                   | review-depth percentile                             |
+| `commits in export: N`                              | count of commits parsed from the git log            |
+| `directories: N`                                    | distinct top-level directories seen                 |
+| `  <dir>: bus_factor=B authors=A touches=T top=... (P%)` | one directory concentration line              |
+
+The `report` command wraps the two blocks with `== flow ==` and

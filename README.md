@@ -347,3 +347,15 @@ exports you give it.
 - A "touch" for ownership is one commit that changed a directory, counted once
   regardless of file or line count. A directory touched by many trivial commits
   and one touched by a few large commits can look similar.
+- Bus factor uses a simple majority rule. It does not weight by recency or by
+  how critical a directory is to the system.
+- reviewtide reads only what is in the exports. It does not fetch anything and
+  cannot reconstruct reviews, comments, or conversations that were never
+  recorded in the export. Discussion that happened in chat, in a call, or in a
+  tool that did not make it into the JSON Lines file is invisible.
+- The tool does not merge a PR export with a git log by identity; the two are
+  reported side by side. Matching a specific PR to its commits is out of scope.
+
+## Design decisions
+
+Each decision records the alternative that was rejected and why.

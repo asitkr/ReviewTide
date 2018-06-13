@@ -334,3 +334,16 @@ Defined in `src/reviewtide/cli.py`.
 | 2    | `EXIT_USAGE`    | usage error: missing file or malformed export                    |
 
 A finding is not an error: exit code 1 means the tool found something worth
+attention, which makes it usable in CI (fail on findings, pass otherwise).
+
+## Limitations
+
+reviewtide measures flow, not quality, and cannot see anything outside the
+exports you give it.
+
+- Queue time and first response latency are the same measurement here: time from
+  open to first review. If your process distinguishes "ready for review" from
+  "opened", reviewtide cannot see that, because the export does not carry it.
+- A "touch" for ownership is one commit that changed a directory, counted once
+  regardless of file or line count. A directory touched by many trivial commits
+  and one touched by a few large commits can look similar.

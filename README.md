@@ -321,3 +321,16 @@ time, no randomness, so two runs of the same input diff cleanly in git.
 | `  <dir>: bus_factor=B authors=A touches=T top=... (P%)` | one directory concentration line              |
 
 The `report` command wraps the two blocks with `== flow ==` and
+`== ownership ==` headers.
+
+## Exit codes
+
+Defined in `src/reviewtide/cli.py`.
+
+| Code | Name            | Meaning                                                          |
+| ---- | --------------- | ---------------------------------------------------------------- |
+| 0    | `EXIT_CLEAN`    | ran successfully, no findings                                    |
+| 1    | `EXIT_FINDINGS` | a finding is present: a bus-factor-1 directory or an unreviewed PR |
+| 2    | `EXIT_USAGE`    | usage error: missing file or malformed export                    |
+
+A finding is not an error: exit code 1 means the tool found something worth

@@ -372,3 +372,15 @@ misleading figure.
 Rejected: a lines-per-author or commits-per-author summary. It is easy to
 compute from the same git export and is the number teams ask for first. It was
 left out because it rewards churn, punishes deletion and review, and turns a
+measurement tool into a surveillance one. The bus-factor signal is the
+deliberate substitute: it uses per-author data to measure team risk, not
+individual output.
+
+### Offline exports, not a live API
+
+Rejected: calling a hosting provider's API directly. An API integration would
+remove the export step, but it would bind the tool to one provider's schema and
+auth model, require network access and credentials, and make runs
+non-reproducible as the upstream data shifts. Reading a file you exported keeps
+reviewtide provider-agnostic, offline, dependency-free, and deterministic: the
+same file always produces the same report.

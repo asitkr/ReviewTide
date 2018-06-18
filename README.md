@@ -359,3 +359,16 @@ exports you give it.
 ## Design decisions
 
 Each decision records the alternative that was rejected and why.
+
+### Percentiles, not means
+
+Rejected: reporting the mean first response latency. A single 67-hour outlier
+can drag a mean well above the typical experience, making a mostly-healthy
+queue look slow. Percentiles preserve the shape a mean flattens into one
+misleading figure.
+
+### No per-author productivity metric
+
+Rejected: a lines-per-author or commits-per-author summary. It is easy to
+compute from the same git export and is the number teams ask for first. It was
+left out because it rewards churn, punishes deletion and review, and turns a

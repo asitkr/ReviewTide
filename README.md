@@ -384,3 +384,16 @@ auth model, require network access and credentials, and make runs
 non-reproducible as the upstream data shifts. Reading a file you exported keeps
 reviewtide provider-agnostic, offline, dependency-free, and deterministic: the
 same file always produces the same report.
+
+## Repository layout
+
+```
+reviewtide/
+  README.md              this file
+  LICENSE                MIT license text
+  CHANGELOG.md           release notes, starting at 0.1.0
+  pyproject.toml         package metadata and the reviewtide console script
+  .gitignore             ignores caches and build artifacts
+  src/reviewtide/
+    __init__.py          package marker and version string
+    __main__.py          enables python -m reviewtide

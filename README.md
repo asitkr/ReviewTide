@@ -409,3 +409,16 @@ reviewtide/
     pr_export.jsonl      20 PRs, 2 never reviewed
   docs/assets/
     logo.svg             the wordmark, review in slate and tide in teal
+    review-latency.svg   first response latency histogram for the sample
+  tests/
+    test_cli.py          CLI exit codes and output on the fixtures
+    test_flow.py         percentile math, latency, depth, small-sample rule
+    test_gitlog.py       numstat parsing and error cases
+    test_ownership.py    top-level dir, bus factor, at-risk detection
+    test_prexport.py     JSONL parsing, sorting, error cases
+```
+
+## Glossary
+
+| Term                    | Meaning in reviewtide                                                     |
+| ----------------------- | ------------------------------------------------------------------------- |

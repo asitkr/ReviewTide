@@ -397,3 +397,15 @@ reviewtide/
   src/reviewtide/
     __init__.py          package marker and version string
     __main__.py          enables python -m reviewtide
+    cli.py               argument parsing, subcommands, exit codes
+    gitlog.py            parse git log --numstat exports
+    prexport.py          parse JSON Lines pull request exports
+    flow.py              latency, queue time, review depth, percentiles
+    ownership.py         per-directory concentration and bus factor
+    report.py            deterministic line-oriented rendering
+  samples/
+    README.md            how the fixtures were built and what they exercise
+    gitlog.numstat       20 commits across 5 directories
+    pr_export.jsonl      20 PRs, 2 never reviewed
+  docs/assets/
+    logo.svg             the wordmark, review in slate and tide in teal

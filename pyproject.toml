@@ -5,3 +5,5 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "reviewtide"
 version = "1.0.0"
+description = "Measure code review flow from offline git and pull request exports."
+readme = "README.md"

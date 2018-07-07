@@ -9,3 +9,4 @@ description = "Measure code review flow from offline git and pull request export
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
+authors = [{ name = "the reviewtide authors" }]

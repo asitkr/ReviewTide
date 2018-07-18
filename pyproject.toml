@@ -19,3 +19,5 @@ classifiers = [
 
 [project.scripts]
 reviewtide = "reviewtide.cli:main"
+
+[tool.setuptools]

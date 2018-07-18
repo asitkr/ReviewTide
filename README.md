@@ -422,3 +422,56 @@ reviewtide/
 
 | Term                    | Meaning in reviewtide                                                     |
 | ----------------------- | ------------------------------------------------------------------------- |
+| queue time              | hours a PR waits from open to first review                                |
+| first response latency  | same measurement as queue time, reported under its own label             |
+| review round            | one review event on a PR                                                  |
+| review depth            | rounds and total comments per reviewed PR                                 |
+| touch                   | one commit that changed at least one file in a directory, counted once   |
+| top share               | fraction of a directory's touches held by its most active author         |
+| bus factor              | smallest set of authors whose combined touches exceed 50 percent         |
+| at-risk directory       | a directory with bus factor 1: a single dominant author                  |
+| never reviewed          | a PR whose `reviews` list is empty                                       |
+| n                       | the sample size a statistic was computed from, printed with every stat  |
+
+## Verification
+
+The test suite runs on the standard library test runner with no extra
+dependencies:
+
+```
+PYTHONPATH=src python -m unittest discover -s tests -v
+```
+
+In this session the full suite reported:
+
+```
+Ran 34 tests in 0.005s
+
+OK
+```
+
+The 34 tests break down as 6 in `test_cli.py`, 9 in `test_flow.py`, 6 in
+`test_gitlog.py`, 7 in `test_ownership.py`, and 6 in `test_prexport.py`. They
+cover the percentile math and small-sample withholding rule, latency in hours
+with unreviewed PRs excluded, review-depth sums, numstat parsing (including
+binary `-` counts and malformed headers), JSONL parsing (including review
+sorting, preserved empty reviews, and parse errors), and the CLI exit codes,
+sample-size output, single-owner detection, and deterministic repeat runs.
+
+## Roadmap
+
+No dates are promised. In rough order of intent:
+
+- An optional "ready for review" timestamp so queue time and first response
+  latency can be separated when the export carries it.
+- Recency weighting for the bus-factor signal so an owner who left six months
+  ago does not count the same as an active one.
+- A machine-readable output mode (JSON) alongside the current text, and a way to
+  diff two reports so a team can see whether concentration and latency improve
+  between exports.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
+
+<!-- draft note 1 -->

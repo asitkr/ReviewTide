@@ -8,3 +8,10 @@ not a ranking of individuals.
 
 Bus factor here is the smallest number of authors whose combined share of
 a directory's commit touches exceeds 50 percent. A bus factor of 1 means a
+single author accounts for the majority of activity in that directory.
+"""
+
+from __future__ import annotations
+
+from collections import defaultdict
+from dataclasses import dataclass

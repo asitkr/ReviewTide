@@ -15,3 +15,11 @@ from __future__ import annotations
 
 from collections import defaultdict
 from dataclasses import dataclass
+
+from reviewtide.gitlog import Commit
+
+
+def top_level_dir(path: str) -> str:
+    """Return the first path segment, or "(root)" for top-level files."""
+
+    norm = path.replace("\\", "/")

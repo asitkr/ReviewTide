@@ -23,3 +23,10 @@ def top_level_dir(path: str) -> str:
     """Return the first path segment, or "(root)" for top-level files."""
 
     norm = path.replace("\\", "/")
+    if "/" not in norm:
+        return "(root)"
+    return norm.split("/", 1)[0]
+
+
+@dataclass
+class DirectoryOwnership:

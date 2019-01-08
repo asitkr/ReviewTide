@@ -30,3 +30,10 @@ def top_level_dir(path: str) -> str:
 
 @dataclass
 class DirectoryOwnership:
+    """Concentration facts for one directory."""
+
+    directory: str
+    total_touches: int
+    author_touches: dict[str, int]
+
+    @property

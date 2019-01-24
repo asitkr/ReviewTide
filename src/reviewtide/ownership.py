@@ -37,3 +37,10 @@ class DirectoryOwnership:
     author_touches: dict[str, int]
 
     @property
+    def author_count(self) -> int:
+        return len(self.author_touches)
+
+    def ranked_authors(self) -> list[tuple[str, int]]:
+        """Authors by touch count, descending, then by name for stability."""
+
+        return sorted(

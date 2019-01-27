@@ -44,3 +44,11 @@ class DirectoryOwnership:
         """Authors by touch count, descending, then by name for stability."""
 
         return sorted(
+            self.author_touches.items(),
+            key=lambda kv: (-kv[1], kv[0]),
+        )
+
+    def bus_factor(self) -> int:
+        """Smallest author count whose share exceeds 50 percent of touches."""
+
+        if self.total_touches == 0:

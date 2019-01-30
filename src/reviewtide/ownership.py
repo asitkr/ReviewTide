@@ -52,3 +52,10 @@ class DirectoryOwnership:
         """Smallest author count whose share exceeds 50 percent of touches."""
 
         if self.total_touches == 0:
+            return 0
+        cumulative = 0
+        threshold = self.total_touches / 2.0
+        for count, (_author, touches) in enumerate(self.ranked_authors(), 1):
+            cumulative += touches
+            if cumulative > threshold:
+                return count

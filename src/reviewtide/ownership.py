@@ -81,3 +81,10 @@ def compute_ownership(commits: list[Commit]) -> list[DirectoryOwnership]:
     per_dir: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
     for commit in commits:
         dirs_in_commit = {top_level_dir(fc.path) for fc in commit.files}
+        for directory in dirs_in_commit:
+            per_dir[directory][commit.author] += 1
+
+    result: list[DirectoryOwnership] = []
+    for directory, authors in per_dir.items():
+        total = sum(authors.values())
+        result.append(

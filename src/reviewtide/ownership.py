@@ -73,3 +73,11 @@ class DirectoryOwnership:
 def compute_ownership(commits: list[Commit]) -> list[DirectoryOwnership]:
     """Aggregate commit touches per directory and author.
 
+    A "touch" is one commit that changed at least one file in the directory.
+    A commit that changes three files in the same directory counts once for
+    that directory, so a single large refactor does not inflate the score.
+    """
+
+    per_dir: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
+    for commit in commits:
+        dirs_in_commit = {top_level_dir(fc.path) for fc in commit.files}

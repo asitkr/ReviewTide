@@ -66,3 +66,10 @@ class DirectoryOwnership:
 
         if self.total_touches == 0:
             return 0.0
+        top = self.ranked_authors()[0][1]
+        return top / self.total_touches
+
+
+def compute_ownership(commits: list[Commit]) -> list[DirectoryOwnership]:
+    """Aggregate commit touches per directory and author.
+

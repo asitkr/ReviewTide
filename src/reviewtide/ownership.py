@@ -59,3 +59,10 @@ class DirectoryOwnership:
             cumulative += touches
             if cumulative > threshold:
                 return count
+        return self.author_count
+
+    def top_share(self) -> float:
+        """Fraction of touches held by the single most active author."""
+
+        if self.total_touches == 0:
+            return 0.0

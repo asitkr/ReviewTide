@@ -10,3 +10,11 @@ is expected to carry these fields:
     reviews       list of review events, each with:
                       reviewer    login of the reviewer
                       submitted_at ISO 8601 timestamp
+                      comments    integer count of comments in that review
+
+`reviews` may be empty, meaning the PR was never reviewed. That is a real
+signal and is preserved rather than dropped.
+"""
+
+from __future__ import annotations
+

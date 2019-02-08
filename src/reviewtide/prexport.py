@@ -18,3 +18,11 @@ signal and is preserved rather than dropped.
 
 from __future__ import annotations
 
+import json
+from dataclasses import dataclass, field
+from datetime import datetime
+
+
+@dataclass(frozen=True)
+class Review:
+    """A single review event on a pull request."""

@@ -26,3 +26,11 @@ from datetime import datetime
 @dataclass(frozen=True)
 class Review:
     """A single review event on a pull request."""
+
+    reviewer: str
+    submitted_at: datetime
+    comments: int
+
+
+@dataclass
+class PullRequest:

@@ -42,3 +42,12 @@ class PullRequest:
     opened_at: datetime
     reviews: list[Review] = field(default_factory=list)
 
+
+class PrExportError(ValueError):
+    """Raised when a JSONL PR record cannot be parsed."""
+
+
+def _iso(value: str, lineno: int, field_name: str) -> datetime:
+    try:
+        return datetime.fromisoformat(value)
+    except (ValueError, TypeError) as exc:

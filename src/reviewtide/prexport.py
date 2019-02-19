@@ -34,3 +34,11 @@ class Review:
 
 @dataclass
 class PullRequest:
+    """A pull request with its ordered review events."""
+
+    pr_id: str
+    author: str
+    directories: list[str]
+    opened_at: datetime
+    reviews: list[Review] = field(default_factory=list)
+

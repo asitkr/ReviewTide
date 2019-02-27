@@ -67,3 +67,11 @@ def parse_pr_record(obj: dict, lineno: int) -> PullRequest:
     if not isinstance(directories, list):
         raise PrExportError(f"line {lineno}: directories must be a list")
 
+    reviews: list[Review] = []
+    for idx, rev in enumerate(obj["reviews"]):
+        for required in ("reviewer", "submitted_at", "comments"):
+            if required not in rev:
+                raise PrExportError(
+                    f"line {lineno}: review {idx} missing field {required!r}"
+                )
+        reviews.append(

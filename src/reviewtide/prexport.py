@@ -83,3 +83,12 @@ def parse_pr_record(obj: dict, lineno: int) -> PullRequest:
         )
 
     # Order reviews chronologically so first-response logic is stable
+    # regardless of export ordering.
+    reviews.sort(key=lambda r: r.submitted_at)
+
+    return PullRequest(
+        pr_id=str(obj["id"]),
+        author=str(obj["author"]),
+        directories=[str(d) for d in directories],
+        opened_at=_iso(obj["opened_at"], lineno, "opened_at"),
+        reviews=reviews,

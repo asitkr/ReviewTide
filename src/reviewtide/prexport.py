@@ -75,3 +75,11 @@ def parse_pr_record(obj: dict, lineno: int) -> PullRequest:
                     f"line {lineno}: review {idx} missing field {required!r}"
                 )
         reviews.append(
+            Review(
+                reviewer=str(rev["reviewer"]),
+                submitted_at=_iso(rev["submitted_at"], lineno, "submitted_at"),
+                comments=int(rev["comments"]),
+            )
+        )
+
+    # Order reviews chronologically so first-response logic is stable

@@ -59,3 +59,11 @@ def _iso(value: str, lineno: int, field_name: str) -> datetime:
 def parse_pr_record(obj: dict, lineno: int) -> PullRequest:
     """Turn one decoded JSON object into a PullRequest."""
 
+    for required in ("id", "author", "directories", "opened_at", "reviews"):
+        if required not in obj:
+            raise PrExportError(f"line {lineno}: missing field {required!r}")
+
+    directories = obj["directories"]
+    if not isinstance(directories, list):
+        raise PrExportError(f"line {lineno}: directories must be a list")
+

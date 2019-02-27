@@ -51,3 +51,11 @@ def _iso(value: str, lineno: int, field_name: str) -> datetime:
     try:
         return datetime.fromisoformat(value)
     except (ValueError, TypeError) as exc:
+        raise PrExportError(
+            f"line {lineno}: bad ISO datetime for {field_name}: {value!r}"
+        ) from exc
+
+
+def parse_pr_record(obj: dict, lineno: int) -> PullRequest:
+    """Turn one decoded JSON object into a PullRequest."""
+

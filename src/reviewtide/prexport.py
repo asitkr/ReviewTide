@@ -92,3 +92,11 @@ def parse_pr_record(obj: dict, lineno: int) -> PullRequest:
         directories=[str(d) for d in directories],
         opened_at=_iso(obj["opened_at"], lineno, "opened_at"),
         reviews=reviews,
+    )
+
+
+def parse_jsonl(text: str) -> list[PullRequest]:
+    """Parse the full JSONL export text into pull requests."""
+
+    prs: list[PullRequest] = []
+    for lineno, raw in enumerate(text.splitlines(), start=1):

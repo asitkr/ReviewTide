@@ -33,3 +33,13 @@ def percentile(sorted_values: list[float], pct: float) -> float:
     if not sorted_values:
         raise ValueError("percentile of empty sequence")
     if len(sorted_values) == 1:
+        return sorted_values[0]
+    rank = (pct / 100.0) * (len(sorted_values) - 1)
+    low = int(rank)
+    high = min(low + 1, len(sorted_values) - 1)
+    frac = rank - low
+    return sorted_values[low] + (sorted_values[high] - sorted_values[low]) * frac
+
+
+@dataclass
+class LatencyStat:

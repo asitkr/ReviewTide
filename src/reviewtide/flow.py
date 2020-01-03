@@ -23,3 +23,13 @@ SECONDS_PER_HOUR = 3600.0
 
 
 def percentile(sorted_values: list[float], pct: float) -> float:
+    """Linear interpolation percentile on an already sorted list.
+
+    `pct` is in the range 0 to 100. This matches the common
+    "linear interpolation between closest ranks" method so results are
+    reproducible without a third-party library.
+    """
+
+    if not sorted_values:
+        raise ValueError("percentile of empty sequence")
+    if len(sorted_values) == 1:

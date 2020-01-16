@@ -43,3 +43,13 @@ def percentile(sorted_values: list[float], pct: float) -> float:
 
 @dataclass
 class LatencyStat:
+    """A latency distribution summary, in hours, with its sample size."""
+
+    label: str
+    sample_size: int
+    values_hours: list[float]
+
+    @property
+    def supported(self) -> bool:
+        return self.sample_size >= MIN_SAMPLE_FOR_PERCENTILE
+

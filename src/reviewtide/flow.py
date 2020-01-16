@@ -53,3 +53,13 @@ class LatencyStat:
     def supported(self) -> bool:
         return self.sample_size >= MIN_SAMPLE_FOR_PERCENTILE
 
+    def p(self, pct: float) -> float | None:
+        """Percentile in hours, or None when the sample is too small."""
+
+        if not self.supported:
+            return None
+        return percentile(sorted(self.values_hours), pct)
+
+    def minimum(self) -> float | None:
+        return min(self.values_hours) if self.values_hours else None
+

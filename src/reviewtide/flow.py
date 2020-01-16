@@ -63,3 +63,13 @@ class LatencyStat:
     def minimum(self) -> float | None:
         return min(self.values_hours) if self.values_hours else None
 
+    def maximum(self) -> float | None:
+        return max(self.values_hours) if self.values_hours else None
+
+
+def _hours(seconds: float) -> float:
+    return seconds / SECONDS_PER_HOUR
+
+
+def first_response_latency(prs: list[PullRequest]) -> LatencyStat:
+    """Hours from a PR opening to its first review, across reviewed PRs.

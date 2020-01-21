@@ -73,3 +73,13 @@ def _hours(seconds: float) -> float:
 
 def first_response_latency(prs: list[PullRequest]) -> LatencyStat:
     """Hours from a PR opening to its first review, across reviewed PRs.
+
+    PRs that were never reviewed are excluded from the latency sample but
+    counted separately by `never_reviewed`.
+    """
+
+    values: list[float] = []
+    for pr in prs:
+        if not pr.reviews:
+            continue
+        first = pr.reviews[0]

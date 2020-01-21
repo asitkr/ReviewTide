@@ -93,3 +93,13 @@ def first_response_latency(prs: list[PullRequest]) -> LatencyStat:
 
 
 def queue_time(prs: list[PullRequest]) -> LatencyStat:
+    """Alias sample for time spent waiting before the first review.
+
+    Queue time is the same measurement as first response latency here: the
+    time a PR sits in the queue before anyone engages. It is reported under
+    its own label so the two concepts stay legible in output.
+    """
+
+    stat = first_response_latency(prs)
+    return LatencyStat(
+        label="queue_time_before_first_review_hours",

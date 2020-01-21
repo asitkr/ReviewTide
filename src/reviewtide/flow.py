@@ -83,3 +83,13 @@ def first_response_latency(prs: list[PullRequest]) -> LatencyStat:
         if not pr.reviews:
             continue
         first = pr.reviews[0]
+        delta = (first.submitted_at - pr.opened_at).total_seconds()
+        values.append(_hours(delta))
+    return LatencyStat(
+        label="first_response_latency_hours",
+        sample_size=len(values),
+        values_hours=values,
+    )
+
+
+def queue_time(prs: list[PullRequest]) -> LatencyStat:

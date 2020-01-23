@@ -103,3 +103,13 @@ def queue_time(prs: list[PullRequest]) -> LatencyStat:
     stat = first_response_latency(prs)
     return LatencyStat(
         label="queue_time_before_first_review_hours",
+        sample_size=stat.sample_size,
+        values_hours=stat.values_hours,
+    )
+
+
+def never_reviewed(prs: list[PullRequest]) -> list[PullRequest]:
+    """PRs that carry no review events at all."""
+
+    return [pr for pr in prs if not pr.reviews]
+

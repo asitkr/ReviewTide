@@ -113,3 +113,13 @@ def never_reviewed(prs: list[PullRequest]) -> list[PullRequest]:
 
     return [pr for pr in prs if not pr.reviews]
 
+
+@dataclass
+class DepthStat:
+    """Review depth: distinct review rounds and comment counts per PR."""
+
+    rounds_per_pr: list[int]
+    comments_per_pr: list[int]
+
+    @property
+    def sample_size(self) -> int:

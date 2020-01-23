@@ -123,3 +123,13 @@ class DepthStat:
 
     @property
     def sample_size(self) -> int:
+        return len(self.rounds_per_pr)
+
+    @property
+    def supported(self) -> bool:
+        return self.sample_size >= MIN_SAMPLE_FOR_PERCENTILE
+
+    def rounds_percentile(self, pct: float) -> float | None:
+        if not self.supported:
+            return None
+        return percentile(sorted(float(r) for r in self.rounds_per_pr), pct)

@@ -9,3 +9,12 @@ Each commit begins with a header line whose first field is the literal
 token `commit`, followed by the hash, author name, and an ISO 8601 date.
 Numstat lines follow, one per changed file:
 
+    <added>\\t<deleted>\\t<path>
+
+Binary files report `-` for added and deleted counts; those are kept as
+None so callers can distinguish them from a zero-line text change.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field

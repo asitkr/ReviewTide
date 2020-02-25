@@ -18,3 +18,11 @@ None so callers can distinguish them from a zero-line text change.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from datetime import datetime
+
+
+@dataclass(frozen=True)
+class FileChange:
+    """One changed file inside a commit."""
+
+    path: str

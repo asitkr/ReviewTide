@@ -26,3 +26,12 @@ class FileChange:
     """One changed file inside a commit."""
 
     path: str
+    added: int | None
+    deleted: int | None
+
+
+@dataclass
+class Commit:
+    """A single commit with its per-file numstat rows."""
+
+    commit_hash: str

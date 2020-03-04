@@ -52,3 +52,11 @@ def _parse_count(token: str) -> int | None:
     except ValueError as exc:  # pragma: no cover - defensive
         raise GitLogError(f"invalid numstat count: {token!r}") from exc
 
+
+def parse_numstat(text: str) -> list[Commit]:
+    """Parse the full numstat export text into a list of commits.
+
+    Blank lines separate commits in the raw git output; they are ignored
+    here because the `commit` header token already delimits records.
+    """
+

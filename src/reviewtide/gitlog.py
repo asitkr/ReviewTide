@@ -60,3 +60,12 @@ def parse_numstat(text: str) -> list[Commit]:
     here because the `commit` header token already delimits records.
     """
 
+    commits: list[Commit] = []
+    current: Commit | None = None
+
+    for lineno, raw in enumerate(text.splitlines(), start=1):
+        line = raw.rstrip("\n")
+        if not line.strip():
+            continue
+
+        fields = line.split("\t")

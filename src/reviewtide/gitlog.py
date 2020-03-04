@@ -43,3 +43,12 @@ class Commit:
 class GitLogError(ValueError):
     """Raised when the numstat export cannot be parsed."""
 
+
+def _parse_count(token: str) -> int | None:
+    if token == "-":
+        return None
+    try:
+        return int(token)
+    except ValueError as exc:  # pragma: no cover - defensive
+        raise GitLogError(f"invalid numstat count: {token!r}") from exc
+

@@ -35,3 +35,11 @@ class Commit:
     """A single commit with its per-file numstat rows."""
 
     commit_hash: str
+    author: str
+    date: datetime
+    files: list[FileChange] = field(default_factory=list)
+
+
+class GitLogError(ValueError):
+    """Raised when the numstat export cannot be parsed."""
+

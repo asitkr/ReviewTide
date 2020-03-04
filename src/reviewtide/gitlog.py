@@ -69,3 +69,12 @@ def parse_numstat(text: str) -> list[Commit]:
             continue
 
         fields = line.split("\t")
+        if fields[0] == "commit":
+            if len(fields) != 4:
+                raise GitLogError(
+                    f"line {lineno}: commit header needs 4 tab fields, "
+                    f"got {len(fields)}"
+                )
+            _, commit_hash, author, date_str = fields
+            try:
+                date = datetime.fromisoformat(date_str)

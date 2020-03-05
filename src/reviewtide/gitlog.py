@@ -78,3 +78,11 @@ def parse_numstat(text: str) -> list[Commit]:
             _, commit_hash, author, date_str = fields
             try:
                 date = datetime.fromisoformat(date_str)
+            except ValueError as exc:
+                raise GitLogError(
+                    f"line {lineno}: bad ISO date {date_str!r}"
+                ) from exc
+            current = Commit(commit_hash=commit_hash, author=author, date=date)
+            commits.append(current)
+            continue
+

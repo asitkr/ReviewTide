@@ -86,3 +86,12 @@ def parse_numstat(text: str) -> list[Commit]:
             commits.append(current)
             continue
 
+        if current is None:
+            raise GitLogError(
+                f"line {lineno}: numstat row before any commit header"
+            )
+
+        if len(fields) != 3:
+            raise GitLogError(
+                f"line {lineno}: numstat row needs 3 tab fields, "
+                f"got {len(fields)}"

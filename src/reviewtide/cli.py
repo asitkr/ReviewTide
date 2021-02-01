@@ -9,3 +9,14 @@ Subcommands:
 Exit codes:
     0  clean, no findings
     1  findings present (a bus-factor-1 directory or an unreviewed PR)
+    2  usage error
+"""
+
+from __future__ import annotations
+
+import argparse
+import sys
+
+from reviewtide import __version__
+from reviewtide.gitlog import GitLogError, parse_numstat_file
+from reviewtide.prexport import PrExportError, parse_jsonl_file

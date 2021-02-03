@@ -43,3 +43,15 @@ def build_parser() -> argparse.ArgumentParser:
     )
     sub = parser.add_subparsers(dest="command", required=True)
 
+    p_flow = sub.add_parser("flow", help="review latency and depth")
+    p_flow.add_argument("--pr", required=True, help="path to JSONL PR export")
+
+    p_own = sub.add_parser("ownership", help="directory bus factor")
+    p_own.add_argument(
+        "--gitlog", required=True, help="path to git numstat export"
+    )
+
+    p_rep = sub.add_parser("report", help="combined flow and ownership")
+    p_rep.add_argument("--pr", required=True, help="path to JSONL PR export")
+    p_rep.add_argument(
+        "--gitlog", required=True, help="path to git numstat export"

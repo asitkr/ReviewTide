@@ -20,3 +20,15 @@ import sys
 from reviewtide import __version__
 from reviewtide.gitlog import GitLogError, parse_numstat_file
 from reviewtide.prexport import PrExportError, parse_jsonl_file
+from reviewtide.report import (
+    has_findings,
+    render_flow,
+    render_ownership,
+    render_report,
+)
+
+EXIT_CLEAN = 0
+EXIT_FINDINGS = 1
+EXIT_USAGE = 2
+
+

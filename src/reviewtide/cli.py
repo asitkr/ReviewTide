@@ -32,3 +32,14 @@ EXIT_FINDINGS = 1
 EXIT_USAGE = 2
 
 
+def _emit(lines: list[str]) -> None:
+    sys.stdout.write("\n".join(lines) + "\n")
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="reviewtide",
+        description="Measure code review flow from offline exports.",
+    )
+    sub = parser.add_subparsers(dest="command", required=True)
+

@@ -66,3 +66,15 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     if args.command == "version":
+        _emit([f"reviewtide {__version__}"])
+        return EXIT_CLEAN
+
+    try:
+        if args.command == "flow":
+            prs = parse_jsonl_file(args.pr)
+            _emit(render_flow(prs))
+            return EXIT_FINDINGS if any(
+                not pr.reviews for pr in prs
+            ) else EXIT_CLEAN
+
+        if args.command == "ownership":

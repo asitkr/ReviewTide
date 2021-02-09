@@ -55,3 +55,14 @@ def build_parser() -> argparse.ArgumentParser:
     p_rep.add_argument("--pr", required=True, help="path to JSONL PR export")
     p_rep.add_argument(
         "--gitlog", required=True, help="path to git numstat export"
+    )
+
+    sub.add_parser("version", help="print version and exit")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+
+    if args.command == "version":

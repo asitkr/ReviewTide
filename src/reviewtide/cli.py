@@ -78,3 +78,14 @@ def main(argv: list[str] | None = None) -> int:
             ) else EXIT_CLEAN
 
         if args.command == "ownership":
+            commits = parse_numstat_file(args.gitlog)
+            _emit(render_ownership(commits))
+            from reviewtide.ownership import at_risk, compute_ownership
+
+            return (
+                EXIT_FINDINGS
+                if at_risk(compute_ownership(commits))
+                else EXIT_CLEAN
+            )
+
+        if args.command == "report":

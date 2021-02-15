@@ -23,3 +23,16 @@ PERCENTILES = (50.0, 75.0, 90.0)
 
 def _fmt_hours(value: float | None) -> str:
     if value is None:
+        return "n/a"
+    return f"{value:.1f}h"
+
+
+def _latency_lines(stat: LatencyStat) -> list[str]:
+    lines: list[str] = []
+    lines.append(f"{stat.label} (n={stat.sample_size})")
+    if stat.sample_size == 0:
+        lines.append("  no reviewed pull requests in sample")
+        return lines
+    if not stat.supported:
+        lines.append(
+            f"  sample too small for percentiles "

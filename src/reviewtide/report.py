@@ -85,3 +85,16 @@ def render_flow(prs: list[PullRequest]) -> list[str]:
     lines.extend(_latency_lines(queue_time(prs)))
     lines.append("")
     lines.extend(_depth_lines(review_depth(prs)))
+    return lines
+
+
+def _fmt_share(share: float) -> str:
+    return f"{share * 100:.0f}%"
+
+
+def render_ownership(commits: list[Commit]) -> list[str]:
+    """Return the ownership report as a list of output lines."""
+
+    ownership = compute_ownership(commits)
+    lines: list[str] = []
+    lines.append(f"commits in export: {len(commits)}")

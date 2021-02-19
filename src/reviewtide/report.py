@@ -36,3 +36,15 @@ def _latency_lines(stat: LatencyStat) -> list[str]:
     if not stat.supported:
         lines.append(
             f"  sample too small for percentiles "
+            f"(need n>={MIN_SAMPLE_FOR_PERCENTILE}); raw values in hours:"
+        )
+        raw = ", ".join(f"{v:.1f}" for v in sorted(stat.values_hours))
+        lines.append(f"  {raw}")
+        return lines
+    for pct in PERCENTILES:
+        lines.append(f"  p{int(pct)}  {_fmt_hours(stat.p(pct))}")
+    lines.append(f"  min  {_fmt_hours(stat.minimum())}")
+    lines.append(f"  max  {_fmt_hours(stat.maximum())}")
+    return lines
+
+

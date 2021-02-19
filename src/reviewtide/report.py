@@ -73,3 +73,15 @@ def _depth_lines(stat: DepthStat) -> list[str]:
     return lines
 
 
+def render_flow(prs: list[PullRequest]) -> list[str]:
+    """Return the flow report as a list of output lines."""
+
+    lines: list[str] = []
+    lines.append(f"pull requests in export: {len(prs)}")
+    unreviewed = never_reviewed(prs)
+    lines.append(f"never reviewed: {len(unreviewed)}")
+    lines.append("")
+
+    lines.extend(_latency_lines(queue_time(prs)))
+    lines.append("")
+    lines.extend(_depth_lines(review_depth(prs)))

@@ -48,3 +48,16 @@ def _latency_lines(stat: LatencyStat) -> list[str]:
     return lines
 
 
+def _depth_lines(stat: DepthStat) -> list[str]:
+    lines: list[str] = []
+    lines.append(f"review_depth (n={stat.sample_size})")
+    if stat.sample_size == 0:
+        lines.append("  no reviewed pull requests in sample")
+        return lines
+    if not stat.supported:
+        lines.append(
+            f"  sample too small for percentiles "
+            f"(need n>={MIN_SAMPLE_FOR_PERCENTILE})"
+        )
+        rounds = ", ".join(str(r) for r in sorted(stat.rounds_per_pr))
+        comments = ", ".join(str(c) for c in sorted(stat.comments_per_pr))

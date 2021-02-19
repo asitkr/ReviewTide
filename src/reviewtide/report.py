@@ -61,3 +61,15 @@ def _depth_lines(stat: DepthStat) -> list[str]:
         )
         rounds = ", ".join(str(r) for r in sorted(stat.rounds_per_pr))
         comments = ", ".join(str(c) for c in sorted(stat.comments_per_pr))
+        lines.append(f"  rounds per pr:   {rounds}")
+        lines.append(f"  comments per pr: {comments}")
+        return lines
+    for pct in PERCENTILES:
+        rp = stat.rounds_percentile(pct)
+        cp = stat.comments_percentile(pct)
+        lines.append(
+            f"  p{int(pct)}  rounds {rp:.1f}  comments {cp:.1f}"
+        )
+    return lines
+
+

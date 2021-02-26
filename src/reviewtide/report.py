@@ -98,3 +98,15 @@ def render_ownership(commits: list[Commit]) -> list[str]:
     ownership = compute_ownership(commits)
     lines: list[str] = []
     lines.append(f"commits in export: {len(commits)}")
+    lines.append(f"directories: {len(ownership)}")
+    lines.append("")
+    lines.append("directory concentration (riskiest first)")
+    for d in ownership:
+        top_author, top_count = d.ranked_authors()[0]
+        lines.append(
+            f"  {d.directory}: bus_factor={d.bus_factor()} "
+            f"authors={d.author_count} touches={d.total_touches} "
+            f"top={top_author} ({_fmt_share(d.top_share())})"
+        )
+    return lines
+

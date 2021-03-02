@@ -10,3 +10,10 @@ SAMPLES = os.path.join(
 )
 PR = os.path.join(SAMPLES, "pr_export.jsonl")
 GITLOG = os.path.join(SAMPLES, "gitlog.numstat")
+
+
+def run(argv):
+    buf = io.StringIO()
+    with redirect_stdout(buf):
+        code = main(argv)
+    return code, buf.getvalue()

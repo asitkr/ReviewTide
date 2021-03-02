@@ -24,3 +24,9 @@ class CliTest(unittest.TestCase):
         code, out = run(["version"])
         self.assertEqual(code, EXIT_CLEAN)
         self.assertIn("reviewtide", out)
+
+    def test_flow_reports_sample_size(self):
+        code, out = run(["flow", "--pr", PR])
+        self.assertIn("n=18", out)
+        self.assertIn("p50", out)
+        self.assertIn("never reviewed: 2", out)

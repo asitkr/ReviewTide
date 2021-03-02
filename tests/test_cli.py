@@ -17,3 +17,10 @@ def run(argv):
     with redirect_stdout(buf):
         code = main(argv)
     return code, buf.getvalue()
+
+
+class CliTest(unittest.TestCase):
+    def test_version(self):
+        code, out = run(["version"])
+        self.assertEqual(code, EXIT_CLEAN)
+        self.assertIn("reviewtide", out)

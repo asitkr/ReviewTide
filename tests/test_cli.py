@@ -37,3 +37,10 @@ class CliTest(unittest.TestCase):
         self.assertIn("infra", out)
         self.assertIn("bus_factor=1", out)
         self.assertEqual(code, EXIT_FINDINGS)
+
+    def test_report_combines_both(self):
+        code, out = run(["report", "--pr", PR, "--gitlog", GITLOG])
+        self.assertIn("== flow ==", out)
+        self.assertIn("== ownership ==", out)
+        self.assertEqual(code, EXIT_FINDINGS)
+

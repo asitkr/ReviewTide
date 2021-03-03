@@ -30,3 +30,10 @@ class CliTest(unittest.TestCase):
         self.assertIn("n=18", out)
         self.assertIn("p50", out)
         self.assertIn("never reviewed: 2", out)
+        self.assertEqual(code, EXIT_FINDINGS)
+
+    def test_ownership_finds_single_owner(self):
+        code, out = run(["ownership", "--gitlog", GITLOG])
+        self.assertIn("infra", out)
+        self.assertIn("bus_factor=1", out)
+        self.assertEqual(code, EXIT_FINDINGS)

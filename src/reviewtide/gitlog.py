@@ -95,3 +95,20 @@ def parse_numstat(text: str) -> list[Commit]:
             raise GitLogError(
                 f"line {lineno}: numstat row needs 3 tab fields, "
                 f"got {len(fields)}"
+            )
+        added, deleted, path = fields
+        current.files.append(
+            FileChange(
+                path=path,
+                added=_parse_count(added),
+                deleted=_parse_count(deleted),
+            )
+        )
+
+    return commits
+
+
+def parse_numstat_file(path: str) -> list[Commit]:
+    """Read and parse a numstat export from a file path."""
+
+    with open(path, "r", encoding="utf-8") as handle:

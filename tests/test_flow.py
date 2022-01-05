@@ -17,3 +17,13 @@ def make_pr(pr_id, hours_to_first=None, rounds_comments=None):
     if hours_to_first is not None:
         submitted = BASE + timedelta(hours=hours_to_first)
         comments = rounds_comments[0] if rounds_comments else 1
+        reviews.append(
+            Review(reviewer="r", submitted_at=submitted, comments=comments)
+        )
+        if rounds_comments:
+            for i, c in enumerate(rounds_comments[1:], start=1):
+                reviews.append(
+                    Review(
+                        reviewer="r",
+                        submitted_at=submitted + timedelta(hours=i),
+                        comments=c,

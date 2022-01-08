@@ -27,3 +27,13 @@ def make_pr(pr_id, hours_to_first=None, rounds_comments=None):
                         reviewer="r",
                         submitted_at=submitted + timedelta(hours=i),
                         comments=c,
+                    )
+                )
+    return PullRequest(
+        pr_id=str(pr_id),
+        author="a",
+        directories=["src"],
+        opened_at=BASE,
+        reviews=reviews,
+    )
+

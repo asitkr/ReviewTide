@@ -37,3 +37,13 @@ def make_pr(pr_id, hours_to_first=None, rounds_comments=None):
         reviews=reviews,
     )
 
+
+class PercentileTest(unittest.TestCase):
+    def test_median_odd(self):
+        self.assertEqual(percentile([1.0, 2.0, 3.0], 50), 2.0)
+
+    def test_p90_interpolates(self):
+        vals = [float(x) for x in range(1, 11)]
+        self.assertAlmostEqual(percentile(vals, 90), 9.1)
+
+    def test_single_value(self):

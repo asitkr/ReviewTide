@@ -47,3 +47,13 @@ class PercentileTest(unittest.TestCase):
         self.assertAlmostEqual(percentile(vals, 90), 9.1)
 
     def test_single_value(self):
+        self.assertEqual(percentile([5.0], 50), 5.0)
+
+    def test_empty_raises(self):
+        with self.assertRaises(ValueError):
+            percentile([], 50)
+
+
+class LatencyTest(unittest.TestCase):
+    def test_latency_computed_in_hours(self):
+        prs = [make_pr(i, hours_to_first=i + 1) for i in range(6)]

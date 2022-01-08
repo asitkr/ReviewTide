@@ -57,3 +57,13 @@ class PercentileTest(unittest.TestCase):
 class LatencyTest(unittest.TestCase):
     def test_latency_computed_in_hours(self):
         prs = [make_pr(i, hours_to_first=i + 1) for i in range(6)]
+        stat = first_response_latency(prs)
+        self.assertEqual(stat.sample_size, 6)
+        self.assertTrue(stat.supported)
+        self.assertAlmostEqual(stat.minimum(), 1.0)
+        self.assertAlmostEqual(stat.maximum(), 6.0)
+
+    def test_unreviewed_excluded_from_sample(self):
+        prs = [make_pr(1, hours_to_first=2), make_pr(2)]
+        stat = first_response_latency(prs)
+        self.assertEqual(stat.sample_size, 1)

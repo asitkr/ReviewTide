@@ -67,3 +67,13 @@ class LatencyTest(unittest.TestCase):
         prs = [make_pr(1, hours_to_first=2), make_pr(2)]
         stat = first_response_latency(prs)
         self.assertEqual(stat.sample_size, 1)
+
+    def test_small_sample_withholds_percentile(self):
+        prs = [make_pr(i, hours_to_first=i + 1) for i in range(3)]
+        stat = first_response_latency(prs)
+        self.assertLess(stat.sample_size, MIN_SAMPLE_FOR_PERCENTILE)
+        self.assertFalse(stat.supported)
+        self.assertIsNone(stat.p(50))
+
+    def test_exactly_min_sample_supported(self):
+        prs = [

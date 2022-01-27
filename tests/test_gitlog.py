@@ -18,3 +18,10 @@ class ParseNumstatTest(unittest.TestCase):
         self.assertEqual(c.author, "Alice Rivera")
         self.assertEqual(
             c.date, datetime(2026, 1, 5, 9, 12, tzinfo=timezone.utc)
+        )
+        self.assertEqual(len(c.files), 2)
+        self.assertEqual(c.files[0].path, "src/parser.py")
+        self.assertEqual(c.files[0].added, 14)
+        self.assertEqual(c.files[0].deleted, 2)
+
+    def test_binary_file_counts_are_none(self):

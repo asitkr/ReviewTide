@@ -25,3 +25,10 @@ class ParseNumstatTest(unittest.TestCase):
         self.assertEqual(c.files[0].deleted, 2)
 
     def test_binary_file_counts_are_none(self):
+        text = (
+            "commit\tabc\tBob\t2026-01-05T09:12:00+00:00\n"
+            "-\t-\tassets/logo.png\n"
+        )
+        commits = parse_numstat(text)
+        self.assertIsNone(commits[0].files[0].added)
+        self.assertIsNone(commits[0].files[0].deleted)

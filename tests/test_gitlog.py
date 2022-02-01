@@ -32,3 +32,10 @@ class ParseNumstatTest(unittest.TestCase):
         commits = parse_numstat(text)
         self.assertIsNone(commits[0].files[0].added)
         self.assertIsNone(commits[0].files[0].deleted)
+
+    def test_blank_lines_ignored(self):
+        text = (
+            "commit\tabc\tBob\t2026-01-05T09:12:00+00:00\n"
+            "\n"
+            "3\t1\tsrc/a.py\n"
+            "\n"

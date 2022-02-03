@@ -39,3 +39,10 @@ class ParseNumstatTest(unittest.TestCase):
             "\n"
             "3\t1\tsrc/a.py\n"
             "\n"
+        )
+        commits = parse_numstat(text)
+        self.assertEqual(len(commits[0].files), 1)
+
+    def test_numstat_before_commit_raises(self):
+        with self.assertRaises(GitLogError):
+            parse_numstat("3\t1\tsrc/a.py\n")

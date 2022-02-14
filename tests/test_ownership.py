@@ -12,3 +12,10 @@ def commit(author, *paths):
         commit_hash="h",
         author=author,
         date=BASE,
+        files=[FileChange(path=p, added=1, deleted=0) for p in paths],
+    )
+
+
+class TopLevelDirTest(unittest.TestCase):
+    def test_nested(self):
+        self.assertEqual(top_level_dir("src/a/b.py"), "src")

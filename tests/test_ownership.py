@@ -19,3 +19,11 @@ def commit(author, *paths):
 class TopLevelDirTest(unittest.TestCase):
     def test_nested(self):
         self.assertEqual(top_level_dir("src/a/b.py"), "src")
+
+    def test_root_file(self):
+        self.assertEqual(top_level_dir("README.md"), "(root)")
+
+    def test_backslash_normalised(self):
+        self.assertEqual(top_level_dir("infra\\deploy.tf"), "infra")
+
+

@@ -27,3 +27,10 @@ class TopLevelDirTest(unittest.TestCase):
         self.assertEqual(top_level_dir("infra\\deploy.tf"), "infra")
 
 
+class OwnershipTest(unittest.TestCase):
+    def test_single_owner_bus_factor_one(self):
+        commits = [commit("dana", "infra/a.tf") for _ in range(4)]
+        own = compute_ownership(commits)
+        self.assertEqual(len(own), 1)
+        self.assertEqual(own[0].bus_factor(), 1)
+        self.assertEqual(own[0].top_share(), 1.0)

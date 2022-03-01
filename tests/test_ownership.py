@@ -42,3 +42,11 @@ class OwnershipTest(unittest.TestCase):
             commit("b", "src/y.py"),
         ]
         own = compute_ownership(commits)
+        self.assertEqual(own[0].bus_factor(), 2)
+
+    def test_touch_counted_once_per_commit(self):
+        commits = [commit("a", "src/x.py", "src/y.py", "src/z.py")]
+        own = compute_ownership(commits)
+        self.assertEqual(own[0].total_touches, 1)
+
+    def test_at_risk_finds_single_owner(self):

@@ -34,3 +34,11 @@ class OwnershipTest(unittest.TestCase):
         self.assertEqual(len(own), 1)
         self.assertEqual(own[0].bus_factor(), 1)
         self.assertEqual(own[0].top_share(), 1.0)
+        self.assertEqual(own[0].author_count, 1)
+
+    def test_two_equal_owners_bus_factor_two(self):
+        commits = [
+            commit("a", "src/x.py"),
+            commit("b", "src/y.py"),
+        ]
+        own = compute_ownership(commits)

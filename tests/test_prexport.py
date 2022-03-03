@@ -14,3 +14,12 @@ class ParseJsonlTest(unittest.TestCase):
             "reviews": [],
         }
         base.update(over)
+        import json
+
+        return json.dumps(base)
+
+    def test_basic_parse(self):
+        text = self._line(
+            reviews=[
+                {
+                    "reviewer": "ben",

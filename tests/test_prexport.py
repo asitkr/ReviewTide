@@ -41,3 +41,12 @@ class ParseJsonlTest(unittest.TestCase):
     def test_reviews_sorted_chronologically(self):
         text = self._line(
             reviews=[
+                {
+                    "reviewer": "b",
+                    "submitted_at": "2026-01-05T15:00:00+00:00",
+                    "comments": 1,
+                },
+                {
+                    "reviewer": "a",
+                    "submitted_at": "2026-01-05T10:00:00+00:00",
+                    "comments": 1,

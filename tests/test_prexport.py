@@ -50,3 +50,12 @@ class ParseJsonlTest(unittest.TestCase):
                     "reviewer": "a",
                     "submitted_at": "2026-01-05T10:00:00+00:00",
                     "comments": 1,
+                },
+            ]
+        )
+        pr = parse_jsonl(text)[0]
+        self.assertEqual(pr.reviews[0].reviewer, "a")
+
+    def test_empty_reviews_preserved(self):
+        pr = parse_jsonl(self._line())[0]
+        self.assertEqual(pr.reviews, [])

@@ -23,3 +23,12 @@ class ParseJsonlTest(unittest.TestCase):
             reviews=[
                 {
                     "reviewer": "ben",
+                    "submitted_at": "2026-01-05T11:00:00+00:00",
+                    "comments": 2,
+                }
+            ]
+        )
+        prs = parse_jsonl(text)
+        self.assertEqual(len(prs), 1)
+        pr = prs[0]
+        self.assertEqual(pr.pr_id, "1")

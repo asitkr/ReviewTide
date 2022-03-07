@@ -32,3 +32,12 @@ class ParseJsonlTest(unittest.TestCase):
         self.assertEqual(len(prs), 1)
         pr = prs[0]
         self.assertEqual(pr.pr_id, "1")
+        self.assertEqual(pr.author, "alice")
+        self.assertEqual(
+            pr.opened_at, datetime(2026, 1, 5, 9, 0, tzinfo=timezone.utc)
+        )
+        self.assertEqual(pr.reviews[0].comments, 2)
+
+    def test_reviews_sorted_chronologically(self):
+        text = self._line(
+            reviews=[

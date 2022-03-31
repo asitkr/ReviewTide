@@ -8,3 +8,7 @@ production data.
 ## gitlog.numstat
 
 A `git log --numstat` export in the format reviewtide expects:
+
+```
+commit\t<hash>\t<author>\t<iso-date>
+<added>\t<deleted>\t<path>

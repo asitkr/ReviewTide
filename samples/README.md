@@ -12,3 +12,7 @@ A `git log --numstat` export in the format reviewtide expects:
 ```
 commit\t<hash>\t<author>\t<iso-date>
 <added>\t<deleted>\t<path>
+```
+
+Twenty commits across five top-level directories: `src`, `tests`, `docs`,
+`cli`, and `infra`. Every commit that touches `infra` is authored by Dana Kim,

@@ -16,3 +16,6 @@ commit\t<hash>\t<author>\t<iso-date>
 
 Twenty commits across five top-level directories: `src`, `tests`, `docs`,
 `cli`, and `infra`. Every commit that touches `infra` is authored by Dana Kim,
+so `infra` has a bus factor of 1 by construction. `docs` also happens to have a
+single author in this vector. Line counts are plausible but invented.
+

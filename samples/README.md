@@ -19,3 +19,7 @@ Twenty commits across five top-level directories: `src`, `tests`, `docs`,
 so `infra` has a bus factor of 1 by construction. `docs` also happens to have a
 single author in this vector. Line counts are plausible but invented.
 
+## pr_export.jsonl
+
+A pull request export in JSON Lines, one PR object per line, matching the
+commits above in author, directory, and timing. Twenty PRs. Two of them

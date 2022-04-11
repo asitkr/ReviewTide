@@ -31,3 +31,9 @@ commit	6d1c7ff	Dana Kim	2026-01-13T10:50:00+00:00
 41	11	infra/deploy.tf
 6	0	infra/network.tf
 commit	7e2d800	Alice Rivera	2026-01-13T16:05:00+00:00
+19	5	src/tokens.py
+4	1	tests/test_tokens.py
+commit	8f3e911	Ben Osei	2026-01-14T09:30:00+00:00
+23	3	src/parser.py
+commit	904fa22	Carla Nunez	2026-01-14T15:40:00+00:00
+36	14	docs/guide.md

@@ -1,0 +1,2 @@
+{"id": 101, "author": "alice", "directories": ["src", "tests"], "opened_at": "2026-01-05T09:12:00+00:00", "reviews": [{"reviewer": "ben", "submitted_at": "2026-01-05T11:42:00+00:00", "comments": 3}, {"reviewer": "carla", "submitted_at": "2026-01-05T15:00:00+00:00", "comments": 1}]}
+{"id": 102, "author": "ben", "directories": ["src", "tests"], "opened_at": "2026-01-05T14:40:00+00:00", "reviews": [{"reviewer": "alice", "submitted_at": "2026-01-06T09:10:00+00:00", "comments": 5}]}

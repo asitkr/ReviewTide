@@ -5,3 +5,5 @@
 {"id": 105, "author": "alice", "directories": ["src"], "opened_at": "2026-01-07T08:20:00+00:00", "reviews": [{"reviewer": "ben", "submitted_at": "2026-01-07T12:20:00+00:00", "comments": 2}]}
 {"id": 106, "author": "ben", "directories": ["cli", "tests"], "opened_at": "2026-01-07T13:55:00+00:00", "reviews": [{"reviewer": "carla", "submitted_at": "2026-01-07T16:25:00+00:00", "comments": 6}, {"reviewer": "alice", "submitted_at": "2026-01-08T09:55:00+00:00", "comments": 2}]}
 {"id": 107, "author": "dana", "directories": ["infra"], "opened_at": "2026-01-08T09:45:00+00:00", "reviews": []}
+{"id": 108, "author": "carla", "directories": ["docs"], "opened_at": "2026-01-08T15:10:00+00:00", "reviews": [{"reviewer": "alice", "submitted_at": "2026-01-09T08:40:00+00:00", "comments": 1}]}
+{"id": 109, "author": "alice", "directories": ["src"], "opened_at": "2026-01-09T09:00:00+00:00", "reviews": [{"reviewer": "carla", "submitted_at": "2026-01-09T10:30:00+00:00", "comments": 3}]}

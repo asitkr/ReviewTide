@@ -12,3 +12,5 @@
 {"id": 112, "author": "carla", "directories": ["docs"], "opened_at": "2026-01-12T13:15:00+00:00", "reviews": [{"reviewer": "ben", "submitted_at": "2026-01-12T14:15:00+00:00", "comments": 1}]}
 {"id": 113, "author": "dana", "directories": ["infra"], "opened_at": "2026-01-13T10:50:00+00:00", "reviews": [{"reviewer": "alice", "submitted_at": "2026-01-13T18:50:00+00:00", "comments": 5}]}
 {"id": 114, "author": "alice", "directories": ["src", "tests"], "opened_at": "2026-01-13T16:05:00+00:00", "reviews": [{"reviewer": "carla", "submitted_at": "2026-01-14T09:35:00+00:00", "comments": 4}]}
+{"id": 115, "author": "ben", "directories": ["src"], "opened_at": "2026-01-14T09:30:00+00:00", "reviews": [{"reviewer": "alice", "submitted_at": "2026-01-14T13:00:00+00:00", "comments": 3}]}
+{"id": 116, "author": "carla", "directories": ["docs"], "opened_at": "2026-01-14T15:40:00+00:00", "reviews": []}

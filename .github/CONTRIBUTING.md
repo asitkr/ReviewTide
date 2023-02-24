@@ -5,3 +5,6 @@ reads git logs and PR exports and never calls a forge API.
 
 ## Development setup
 
+- Python 3.11+. The package uses the standard library only.
+
+```bash

@@ -11,3 +11,6 @@ reads git logs and PR exports and never calls a forge API.
 python -m compileall -q src
 python -m pytest -q
 PYTHONPATH=src python -m reviewtide --help
+```
+
+## Before you open a pull request

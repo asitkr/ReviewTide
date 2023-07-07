@@ -6,3 +6,8 @@
     </linearGradient>
     <linearGradient id="tide" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#3fb6a8"/>
+      <stop offset="1" stop-color="#2e8f84"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="260" fill="url(#bg)"/>
+  <g stroke="#1e2831" stroke-width="1">

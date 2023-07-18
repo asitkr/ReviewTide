@@ -24,3 +24,7 @@
       <text x="140" y="12" fill="#cfe0e8" text-anchor="middle">4.2h</text>
       <text x="188" y="12" fill="#9fb0bd">first review</text>
       <rect x="252" y="2" width="40" height="12" rx="3" fill="url(#tide)"/>
+      <text x="330" y="12" fill="#3fb6a8">p50 6.1h</text>
+      <text x="0" y="44" fill="#9fb0bd">approve</text>
+      <line x1="44" y1="40" x2="240" y2="40" stroke="#2b3944" stroke-width="2"/>
+      <rect x="108" y="34" width="36" height="12" rx="3" fill="#24343e"/>

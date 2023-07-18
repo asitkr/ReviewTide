@@ -19,3 +19,8 @@
     <g font-family="Consolas, Menlo, monospace" font-size="12">
       <text x="0" y="12" fill="#9fb0bd">open</text>
       <line x1="44" y1="8" x2="240" y2="8" stroke="#2b3944" stroke-width="2"/>
+      <text x="70" y="12" fill="#9fb0bd">queue</text>
+      <rect x="108" y="2" width="52" height="12" rx="3" fill="#24343e"/>
+      <text x="140" y="12" fill="#cfe0e8" text-anchor="middle">4.2h</text>
+      <text x="188" y="12" fill="#9fb0bd">first review</text>
+      <rect x="252" y="2" width="40" height="12" rx="3" fill="url(#tide)"/>

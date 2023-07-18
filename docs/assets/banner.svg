@@ -28,3 +28,8 @@
       <text x="0" y="44" fill="#9fb0bd">approve</text>
       <line x1="44" y1="40" x2="240" y2="40" stroke="#2b3944" stroke-width="2"/>
       <rect x="108" y="34" width="36" height="12" rx="3" fill="#24343e"/>
+      <text x="180" y="44" fill="#9fb0bd">rounds 2.3</text>
+    </g>
+  </g>
+  <g transform="translate(560 60)">
+    <text x="0" y="0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#7f95a3">metrics</text>

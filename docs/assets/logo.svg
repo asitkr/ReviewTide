@@ -9,3 +9,6 @@
   -->
   <title id="title">reviewtide wordmark</title>
   <desc id="desc">The word reviewtide, with review in slate and tide in teal, split at the compound word boundary.</desc>
+  <rect x="0" y="0" width="240" height="240" fill="#ffffff"/>
+
+  <!-- wordmark, split at the review|tide boundary -->

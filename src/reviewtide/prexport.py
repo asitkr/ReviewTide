@@ -100,3 +100,20 @@ def parse_jsonl(text: str) -> list[PullRequest]:
 
     prs: list[PullRequest] = []
     for lineno, raw in enumerate(text.splitlines(), start=1):
+        line = raw.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise PrExportError(f"line {lineno}: invalid JSON: {exc}") from exc
+        if not isinstance(obj, dict):
+            raise PrExportError(f"line {lineno}: expected a JSON object")
+        prs.append(parse_pr_record(obj, lineno))
+    return prs
+
+
+def parse_jsonl_file(path: str) -> list[PullRequest]:
+    """Read and parse a JSONL PR export from a file path."""
+
+    with open(path, "r", encoding="utf-8") as handle:

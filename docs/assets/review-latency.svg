@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc" width="640" height="400">
+  <!--
+    Palette reason: the subject is waiting time in a review queue. Bars use one
+    calm slate (waiting is neutral, not alarming) with a single amber accent on
+    the slow tail bin, the one place a reader should look because it holds the
+    p90. Teal marks the median reference line. Two colours plus one accent, all

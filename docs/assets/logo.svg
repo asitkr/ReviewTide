@@ -15,3 +15,6 @@
   <text x="120" y="132" text-anchor="middle" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="34" font-weight="700">
     <tspan fill="#475569">review</tspan><tspan fill="#0f766e">tide</tspan>
   </text>
+
+  <!-- one deliberate rule under "tide": a short rising level line, the tide,
+       drawn on a whole-pixel baseline, single stroke width -->

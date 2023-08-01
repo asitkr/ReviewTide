@@ -4,3 +4,9 @@
     calm slate (waiting is neutral, not alarming) with a single amber accent on
     the slow tail bin, the one place a reader should look because it holds the
     p90. Teal marks the median reference line. Two colours plus one accent, all
+    outside the forbidden indigo/violet/cyan/pink and neon-on-black schemes.
+    Numbers below are the real output of the reviewtide flow command run
+    against samples/pr_export.jsonl.
+    n=18. p50=3.8h, p75=17.5h, p90=49.2h, min=1.0h, max=67.0h.
+    Bin counts over first-response latency in hours:
+      [0,6)=10  [6,12)=2  [12,24)=3  [24,48)=1  [48,72)=2  (sum 18)

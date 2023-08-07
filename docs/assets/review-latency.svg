@@ -21,3 +21,9 @@
   <!-- plot frame: x axis at y=320, y axis at x=72 -->
   <!-- y scale: count 0..10 maps to pixels 320..90, so 23px per unit -->
   <line x1="72" y1="90" x2="72" y2="320" stroke="#475569" stroke-width="1"/>
+  <line x1="72" y1="320" x2="600" y2="320" stroke="#475569" stroke-width="1"/>
+
+  <!-- y gridline labels (counts): 0,2,4,6,8,10 -->
+  <g font-family="&quot;Cascadia Mono&quot;, &quot;JetBrains Mono&quot;, Consolas, &quot;DejaVu Sans Mono&quot;, monospace" font-size="11" fill="#475569">
+    <text x="64" y="324" text-anchor="end">0</text>
+    <text x="64" y="278" text-anchor="end">2</text>

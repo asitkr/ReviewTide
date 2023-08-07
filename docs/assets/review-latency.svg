@@ -15,3 +15,9 @@
   <desc id="desc">Histogram of hours from pull request opened to first review across 18 reviewed pull requests. Median 3.8 hours, 90th percentile 49.2 hours. Bins: 0 to 6 hours has 10, 6 to 12 has 2, 12 to 24 has 3, 24 to 48 has 1, 48 to 72 has 2.</desc>
   <rect x="0" y="0" width="640" height="400" fill="#ffffff"/>
 
+  <text x="32" y="36" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#1e293b">First response latency, reviewtide flow</text>
+  <text x="32" y="56" font-family="&quot;Cascadia Mono&quot;, &quot;JetBrains Mono&quot;, Consolas, &quot;DejaVu Sans Mono&quot;, monospace" font-size="12" fill="#475569">n=18 reviewed PRs   p50=3.8h  p75=17.5h  p90=49.2h  max=67.0h</text>
+
+  <!-- plot frame: x axis at y=320, y axis at x=72 -->
+  <!-- y scale: count 0..10 maps to pixels 320..90, so 23px per unit -->
+  <line x1="72" y1="90" x2="72" y2="320" stroke="#475569" stroke-width="1"/>

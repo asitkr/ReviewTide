@@ -32,3 +32,9 @@
     <text x="64" y="140" text-anchor="end">8</text>
     <text x="64" y="94" text-anchor="end">10</text>
   </g>
+
+  <!-- bars: width 88, gap keeps 8px. base y=320 -->
+  <!-- bin [0,6) count 10 -> height 230, top 90 -->
+  <rect x="80" y="90" width="88" height="230" fill="#475569"/>
+  <text x="124" y="84" text-anchor="middle" font-family="&quot;Cascadia Mono&quot;, &quot;JetBrains Mono&quot;, Consolas, &quot;DejaVu Sans Mono&quot;, monospace" font-size="11" fill="#1e293b">10</text>
+  <!-- bin [6,12) count 2 -> height 46, top 274 -->

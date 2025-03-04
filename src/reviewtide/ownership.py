@@ -88,3 +88,18 @@ def compute_ownership(commits: list[Commit]) -> list[DirectoryOwnership]:
     for directory, authors in per_dir.items():
         total = sum(authors.values())
         result.append(
+            DirectoryOwnership(
+                directory=directory,
+                total_touches=total,
+                author_touches=dict(authors),
+            )
+        )
+    # Sort by rising bus factor then falling top share so the riskiest
+    # directories (single owner, high concentration) sort first.
+    result.sort(key=lambda d: (d.bus_factor(), -d.top_share(), d.directory))
+    return result
+
+
+def at_risk(ownership: list[DirectoryOwnership]) -> list[DirectoryOwnership]:
+    """Directories with a bus factor of 1: a single dominant author."""
+

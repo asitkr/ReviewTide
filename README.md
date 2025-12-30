@@ -474,4 +474,4 @@ No dates are promised. In rough order of intent:
 
 MIT. See [LICENSE](LICENSE).
 
-<!-- draft note 1094 -->
+<!-- draft note 1095 -->

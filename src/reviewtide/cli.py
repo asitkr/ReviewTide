@@ -89,3 +89,26 @@ def main(argv: list[str] | None = None) -> int:
             )
 
         if args.command == "report":
+            prs = parse_jsonl_file(args.pr)
+            commits = parse_numstat_file(args.gitlog)
+            _emit(render_report(prs, commits))
+            return (
+                EXIT_FINDINGS
+                if has_findings(prs, commits)
+                else EXIT_CLEAN
+            )
+    except FileNotFoundError as exc:
+        sys.stderr.write(f"error: file not found: {exc.filename}\n")
+        return EXIT_USAGE
+    except (GitLogError, PrExportError) as exc:
+        sys.stderr.write(f"error: {exc}\n")
+        return EXIT_USAGE
+
+    parser.error("unknown command")  # pragma: no cover
+    return EXIT_USAGE
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+
+// draft note 1243

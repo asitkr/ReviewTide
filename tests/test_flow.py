@@ -77,3 +77,23 @@ class LatencyTest(unittest.TestCase):
 
     def test_exactly_min_sample_supported(self):
         prs = [
+            make_pr(i, hours_to_first=i + 1)
+            for i in range(MIN_SAMPLE_FOR_PERCENTILE)
+        ]
+        stat = first_response_latency(prs)
+        self.assertTrue(stat.supported)
+        self.assertIsNotNone(stat.p(50))
+
+
+class DepthTest(unittest.TestCase):
+    def test_rounds_and_comments(self):
+        prs = [make_pr(1, hours_to_first=1, rounds_comments=[2, 3])]
+        stat = review_depth(prs)
+        self.assertEqual(stat.rounds_per_pr, [2])
+        self.assertEqual(stat.comments_per_pr, [5])
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+// draft note 1244

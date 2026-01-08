@@ -23,3 +23,12 @@ single author in this vector. Line counts are plausible but invented.
 
 A pull request export in JSON Lines, one PR object per line, matching the
 commits above in author, directory, and timing. Twenty PRs. Two of them
+(ids 107 and 116) carry no reviews, so the "never reviewed" count is a real,
+non-zero signal. Review timestamps were chosen to spread first-response
+latency from about one hour to about sixty-seven hours so the percentile
+summary has a real shape rather than a flat line.
+
+Every number reviewtide prints from these files is computed from the file
+contents. Nothing in the output is hard coded.
+
+<!-- draft note 1249 -->

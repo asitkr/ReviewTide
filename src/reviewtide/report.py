@@ -110,3 +110,29 @@ def render_ownership(commits: list[Commit]) -> list[str]:
         )
     return lines
 
+
+def render_report(
+    prs: list[PullRequest], commits: list[Commit]
+) -> list[str]:
+    """Combined flow plus ownership report."""
+
+    lines: list[str] = ["== flow =="]
+    lines.extend(render_flow(prs))
+    lines.append("")
+    lines.append("== ownership ==")
+    lines.extend(render_ownership(commits))
+    return lines
+
+
+def has_findings(prs: list[PullRequest], commits: list[Commit]) -> bool:
+    """A finding is any bus-factor-1 directory or any never-reviewed PR."""
+
+    from reviewtide.ownership import at_risk
+
+    if never_reviewed(prs):
+        return True
+    if at_risk(compute_ownership(commits)):
+        return True
+    return False
+
+// draft note 1253

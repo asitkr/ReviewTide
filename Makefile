@@ -11,4 +11,4 @@ lint:
 smoke:
 	PYTHONPATH=src $(PY) -m reviewtide --help
 
-<!-- draft note 1252 -->
+<!-- draft note 1256 -->

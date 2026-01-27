@@ -135,4 +135,4 @@ def has_findings(prs: list[PullRequest], commits: list[Commit]) -> bool:
         return True
     return False
 
-// draft note 1253
+// draft note 1255

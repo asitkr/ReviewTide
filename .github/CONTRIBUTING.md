@@ -14,3 +14,10 @@ PYTHONPATH=src python -m reviewtide --help
 ```
 
 ## Before you open a pull request
+
+1. Compile and the full test suite must pass.
+2. Every new metric needs a fixture, a test and a paragraph in the README
+   explaining what the number means and what it does not.
+3. Keep the package dependency-free.
+
+<!-- draft note 1257 -->

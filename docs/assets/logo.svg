@@ -18,3 +18,8 @@
 
   <!-- one deliberate rule under "tide": a short rising level line, the tide,
        drawn on a whole-pixel baseline, single stroke width -->
+  <line x1="132" y1="150" x2="188" y2="150" stroke="#0f766e" stroke-width="3"/>
+  <line x1="52" y1="150" x2="132" y2="150" stroke="#475569" stroke-width="3"/>
+
+  <text x="120" y="182" text-anchor="middle" font-family="&quot;Cascadia Mono&quot;, &quot;JetBrains Mono&quot;, Consolas, &quot;DejaVu Sans Mono&quot;, monospace" font-size="12" fill="#475569">code review flow</text>
+</svg>

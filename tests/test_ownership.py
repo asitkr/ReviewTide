@@ -50,3 +50,16 @@ class OwnershipTest(unittest.TestCase):
         self.assertEqual(own[0].total_touches, 1)
 
     def test_at_risk_finds_single_owner(self):
+        commits = [
+            commit("dana", "infra/a.tf"),
+            commit("a", "src/x.py"),
+            commit("b", "src/y.py"),
+        ]
+        risk = at_risk(compute_ownership(commits))
+        dirs = {d.directory for d in risk}
+        self.assertIn("infra", dirs)
+        self.assertNotIn("src", dirs)
+
+
+if __name__ == "__main__":
+    unittest.main()

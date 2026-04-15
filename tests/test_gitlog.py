@@ -46,3 +46,15 @@ class ParseNumstatTest(unittest.TestCase):
     def test_numstat_before_commit_raises(self):
         with self.assertRaises(GitLogError):
             parse_numstat("3\t1\tsrc/a.py\n")
+
+    def test_bad_date_raises(self):
+        with self.assertRaises(GitLogError):
+            parse_numstat("commit\tabc\tBob\tnot-a-date\n")
+
+    def test_bad_header_field_count_raises(self):
+        with self.assertRaises(GitLogError):
+            parse_numstat("commit\tabc\tBob\n")
+
+
+if __name__ == "__main__":
+    unittest.main()

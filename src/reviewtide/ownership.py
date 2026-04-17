@@ -103,3 +103,4 @@ def compute_ownership(commits: list[Commit]) -> list[DirectoryOwnership]:
 def at_risk(ownership: list[DirectoryOwnership]) -> list[DirectoryOwnership]:
     """Directories with a bus factor of 1: a single dominant author."""
 
+    return [d for d in ownership if d.bus_factor() == 1]

@@ -30,5 +30,3 @@ summary has a real shape rather than a flat line.
 
 Every number reviewtide prints from these files is computed from the file
 contents. Nothing in the output is hard coded.
-
-<!-- draft note 1249 -->

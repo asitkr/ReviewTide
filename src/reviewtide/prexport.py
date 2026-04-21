@@ -117,3 +117,4 @@ def parse_jsonl_file(path: str) -> list[PullRequest]:
     """Read and parse a JSONL PR export from a file path."""
 
     with open(path, "r", encoding="utf-8") as handle:
+        return parse_jsonl(handle.read())

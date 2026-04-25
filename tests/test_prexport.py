@@ -59,3 +59,19 @@ class ParseJsonlTest(unittest.TestCase):
     def test_empty_reviews_preserved(self):
         pr = parse_jsonl(self._line())[0]
         self.assertEqual(pr.reviews, [])
+
+    def test_missing_field_raises(self):
+        with self.assertRaises(PrExportError):
+            parse_jsonl('{"id": 1, "author": "a"}')
+
+    def test_invalid_json_raises(self):
+        with self.assertRaises(PrExportError):
+            parse_jsonl("{not json}")
+
+    def test_blank_lines_skipped(self):
+        text = self._line() + "\n\n" + self._line(id=2)
+        self.assertEqual(len(parse_jsonl(text)), 2)
+
+
+if __name__ == "__main__":
+    unittest.main()

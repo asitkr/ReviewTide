@@ -44,3 +44,15 @@ class CliTest(unittest.TestCase):
         self.assertIn("== ownership ==", out)
         self.assertEqual(code, EXIT_FINDINGS)
 
+    def test_missing_file_is_usage_error(self):
+        code, _ = run(["flow", "--pr", "does_not_exist.jsonl"])
+        self.assertEqual(code, EXIT_USAGE)
+
+    def test_deterministic_output(self):
+        _, a = run(["report", "--pr", PR, "--gitlog", GITLOG])
+        _, b = run(["report", "--pr", PR, "--gitlog", GITLOG])
+        self.assertEqual(a, b)
+
+
+if __name__ == "__main__":
+    unittest.main()

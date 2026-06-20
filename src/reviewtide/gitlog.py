@@ -113,5 +113,3 @@ def parse_numstat_file(path: str) -> list[Commit]:
 
     with open(path, "r", encoding="utf-8") as handle:
         return parse_numstat(handle.read())
-
-// draft note 1248

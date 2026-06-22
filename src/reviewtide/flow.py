@@ -133,3 +133,26 @@ class DepthStat:
         if not self.supported:
             return None
         return percentile(sorted(float(r) for r in self.rounds_per_pr), pct)
+
+    def comments_percentile(self, pct: float) -> float | None:
+        if not self.supported:
+            return None
+        return percentile(sorted(float(c) for c in self.comments_per_pr), pct)
+
+
+def review_depth(prs: list[PullRequest]) -> DepthStat:
+    """Rounds and total comments per reviewed PR.
+
+    A round is one review event. Comments are summed across the events of a
+    single PR. Unreviewed PRs are excluded so zero rounds does not deflate
+    the depth of PRs that were actually reviewed.
+    """
+
+    rounds: list[int] = []
+    comments: list[int] = []
+    for pr in prs:
+        if not pr.reviews:
+            continue
+        rounds.append(len(pr.reviews))
+        comments.append(sum(r.comments for r in pr.reviews))
+    return DepthStat(rounds_per_pr=rounds, comments_per_pr=comments)

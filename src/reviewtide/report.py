@@ -134,5 +134,3 @@ def has_findings(prs: list[PullRequest], commits: list[Commit]) -> bool:
     if at_risk(compute_ownership(commits)):
         return True
     return False
-
-// draft note 1255

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this tool, please cite it as below."
+title: "ReviewTide"
+abstract: "Review latency and ownership analyzer for git logs and pull request exports."
+type: software
+license: MIT
+authors:
+  - name: ReviewTide contributors
+version: 1.0.0
+date-released: 2026-05-05

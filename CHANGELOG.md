@@ -67,3 +67,15 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Percentile computation with explicit small-sample warnings.
 - `report` subcommand and the first output shape.
 
+## [0.2.0] - 2019-10-01
+
+### Added
+
+- Flow model: request, first response, approval and merge as distinct stamps.
+- A sample export and a sample git log.
+
+## [0.1.0] - 2018-05-22
+
+### Added
+
+- First release: line oriented report over one pull request export.

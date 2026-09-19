@@ -473,5 +473,3 @@ No dates are promised. In rough order of intent:
 ## License
 
 MIT. See [LICENSE](LICENSE).
-
-<!-- draft note 1241 -->

@@ -174,6 +174,9 @@ manufacture a confident answer.
 
 ## Ownership and the bus factor signal
 
+Ownership is computed per path prefix, not per
+repository, so a single-maintainer subsystem is visible even in a busy project.
+
 Bus factor uses a simple majority rule: the smallest number of authors whose
 combined touches exceed half of a directory's total. A bus factor of 1 means a
 single author accounts for the majority of activity, so if that person becomes

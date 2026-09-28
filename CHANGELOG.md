@@ -10,6 +10,35 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Metric wording is being reviewed for the next patch.
 - A trend window is being sketched.
 
+## [5.2.0] - 2026-08-24
+
+### Added
+
+- A trend window comparing two periods side by side.
+
+## [4.0.0] - 2026-08-06
+
+### Changed
+
+- Percentiles are grouped per path prefix in the ownership view.
+
+### Added
+
+- `--min-sample` to suppress percentiles below a chosen sample size.
+
+## [3.0.0] - 2026-06-25
+
+### Changed
+
+- The queue and latency metrics are labelled with their definitions inline.
+
+## [2.1.0] - 2026-05-15
+
+### Added
+
+- The JSON report carries sample sizes next to every percentile.
+- A worked weekly-review example in the docs.
+
 ## [1.0.0] - 2026-05-05
 
 ### Added

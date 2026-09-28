@@ -142,6 +142,9 @@ work done outside version control is invisible.
 
 ## Percentiles and honest sample sizes
 
+Every percentile ships with its sample size.
+A p90 over eleven pull requests is a story, not a measurement, and the report says so next to the number.
+
 Every statistic prints the sample size it was computed from, written as `n=`
 next to the label, so a small sample cannot masquerade as a trend. The strip at
 the top of this README prints `n=18` for exactly that reason.

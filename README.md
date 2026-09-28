@@ -92,6 +92,9 @@ reviewtide version
 
 ## What it measures
 
+Queue time and first response latency are reported separately
+because they answer different questions: one is about attention, the other about the process around it.
+
 Four measures, each defined precisely, each with what it cannot tell you. The
 definitions live in `src/reviewtide/flow.py` and `src/reviewtide/ownership.py`.
 

@@ -252,6 +252,9 @@ tall first bar.
 
 ## Input formats
 
+Both inputs are line oriented and self-contained, so a snapshot of
+the two files is enough to reproduce a report byte for byte.
+
 reviewtide reads two files. Neither is fetched: you export them yourself and
 pass the paths in.
 

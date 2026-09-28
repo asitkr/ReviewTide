@@ -8,6 +8,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Changed
 
 - Metric wording is being reviewed for the next patch.
+- A trend window is being sketched.
 
 ## [1.0.0] - 2026-05-05
 

@@ -4,9 +4,6 @@
 
 <div align="center">
 
-<img src="docs/assets/logo.svg" width="240"
-  alt="The word reviewtide, review set in slate and tide in teal, split at the compound word boundary, above the caption code review flow" />
-
 # ReviewTide
 
 <table>
